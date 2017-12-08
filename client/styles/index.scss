@@ -1,0 +1,246 @@
+@import "normalize.css";
+
+@import url("http://localhost:3000/static/fonts/stylesheet.css");
+
+@import url("https://fonts.googleapis.com/css?family=Roboto+Slab");
+
+$blue: #3E889F;
+$black: #444452;
+$pink: #e2a0ac;
+
+html, body {
+    font-family: 'Roboto Slab', serif;
+    min-height: 100%;
+}
+
+.Flex1 {
+    flex: 1;
+}
+
+.FlexRow {
+    display: flex;
+    flex-direction: row;
+
+    &.JustifyFlexEnd {
+        justify-content: flex-end;
+    }
+
+    &.JustifyBetween {
+        justify-content: space-between;
+    }
+}
+
+.Layout {
+    position: absolute;
+    min-height: 100vh;
+    width: 100%;
+
+    // background-color: #e2a0ac;
+    background-color: black;
+    color: white;
+}
+
+.Page {
+    position: relative;
+    width: 100%;
+    color: $black;
+}
+
+.Index {
+    h1 {
+        text-align: center;
+        margin: 3rem 0 2rem;
+        font-size: 4rem;
+        font-family: 'Agent Orange';
+        color: white;
+    }
+
+    h2 {
+        text-align: center;
+        margin: 0rem 0 2rem;
+        font-size: 2rem;
+        font-family: 'Agent Orange';
+        color: white;
+    }
+
+    div.ImageContainer {
+        position: relative;
+        width: 316px;
+        left: calc((100% - 340px)/2);
+        border: 15px solid white;
+
+        img {
+            height: 100%;
+            width: 316px;
+            border-top: 28px solid black;
+            border-bottom: 28px solid black;
+
+        }
+    }
+
+    .SearchInput {
+        position: relative;
+        width: 960px;
+        left: calc((100% - 960px)/2);
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 60px;
+
+        .SearchInputContainer {
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            width: 500px;
+
+            input {
+                width: 100%;
+                border: 0px;
+                outline: 0px;
+                border-bottom: 1px solid $blue;
+                border-top: 1px solid $blue;
+                border-left: 1px solid $blue;
+                padding: 7px;
+                border-radius: 3px 0 0 3px;
+                font-size: 1rem;
+            }
+
+            .SearchButton {
+                background-color: $blue;
+                width: 100px;
+                height: initial;
+                color: white;
+                border-radius: 0px 3px 3px 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+                transition: all 0.2s;
+
+                &:hover {
+                    cursor: pointer;
+                }
+
+                &:active {
+                    background-color: darken($blue, 5%);
+                    top: 1px;
+                }
+            }
+        }
+
+        .RecentSearchesContainer {
+            margin-top: 14px;
+            width: 500px;
+
+            .TitleContainer {
+                margin-top: 7px;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+                padding-bottom: 7px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                .Clear {
+                    font-size: 0.875rem;
+                    position: relative;
+                    top: 1px;
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+
+                    &:active {
+                        top: 2px;
+                    }
+                }
+            }
+
+            .RecentSearches {
+                position: relative;
+                display: flex;
+                justify-content: flex-start;
+                margin-top: 7px;
+
+                .NoRecent {
+                    font-size: 0.875rem;
+                    height: 28px;
+                }
+
+                .RecentSearch {
+                    background-color: #3E889F;
+                    padding: 0 7px;
+                    height: 28px;
+                    color: white;
+                    border-radius: 3px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    position: relative;
+                    transition: all 0.2s;
+                    min-width: 50px;
+                    margin-right: 10px;
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+
+                    &:active {
+                        background-color: darken($blue, 5%);
+                        top: 1px;
+                    }
+                }
+            }
+        }
+    }
+
+    .ProductList {
+        position: relative;
+        width: 100%;
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+        width: 960px;
+        left: calc((100% - 960px)/2);
+
+        .Product {
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            padding: 14px;
+            border: 1px solid $blue;
+            margin-bottom: 14px;
+            border-radius: 3px;
+            color: $black;
+            text-decoration: none;
+            background-color: white;
+
+            &:hover {
+                background-color: darken(white, 5%);
+            }
+
+            .Image {
+                position: relative;
+                flex: 0.2;
+                display: flex;
+                justify-content: center;
+
+                img {
+                    height: 100px;
+                }
+            }
+
+            .Info {
+                display: flex;
+                flex-direction: column;
+                font-size: 1.4rem;
+                justify-content: space-between;
+                flex: 1;
+
+                .Title {
+                    margin-right: 14px;
+                }
+            }
+        }
+    }
+}
